@@ -78,3 +78,24 @@ void _div(stack_t **stack, unsigned int lineNumber)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+
+/**
+ * _mul - multiplies the second top element of the stack with the top one
+ * @stack: double pointer to top of the stack
+ * @lineNumber: line number of of the opcode
+ *
+ * Return: nothing
+ */
+void _mul(stack_t **stack, unsigned int lineNumber)
+{
+	int result;
+
+	if (!stack || !*stack || !(*stack)->next)
+		stackErr(8, lineNumber, "mul");
+
+	(*stack) = (*stack)->next;
+	result = (*stack)->n * (*stack)->prev->n;
+	(*stack)->n = result;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
+}

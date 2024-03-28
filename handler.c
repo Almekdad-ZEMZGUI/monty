@@ -24,6 +24,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 		{"nop", _nop},
 		{"sub", _sub},
 		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
