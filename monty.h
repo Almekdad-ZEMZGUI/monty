@@ -65,6 +65,7 @@ void _swap(stack_t **stack, unsigned int lineNumber);
 
 /* stack_functions2 */
 void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
 
 /* err_handler */
 void fileErr(int errCode, ...);

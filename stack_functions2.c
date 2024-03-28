@@ -20,3 +20,16 @@ void _add(stack_t **stack, unsigned int line_number)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+
+/**
+ * _nop - doesn’t do anything
+ * @stack: double pointer to top of the stack
+ * @lineNumber: line number of of the opcode
+ *
+ * Return: nothing
+ */
+void _nop(stack_t **stack, unsigned int lineNumber)
+{
+	(void)stack;
+	(void)lineNumber;
+}
