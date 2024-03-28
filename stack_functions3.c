@@ -23,3 +23,23 @@ void _mod(stack_t **stack, unsigned int lineNumber)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+
+/**
+ * _pchar - prints the char at the top of the stack
+ * @stack: double pointer to top of the stack
+ * @lineNumber: line number of of the opcode
+ *
+ * Return: nothing
+ */
+void _pchar(stack_t **stack, unsigned int lineNumber)
+{
+	int result;
+
+	if (!stack || !*stack)
+		strErr(11, lineNumber);
+
+	result = (*stack)->n;
+	if (result < 0 || result > 127)
+		strErr(10, lineNumber);
+	printf("%c\n", result);
+}
