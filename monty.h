@@ -70,6 +70,9 @@ void _sub(stack_t **stack, unsigned int lineNumber);
 void _div(stack_t **stack, unsigned int lineNumber);
 void _mul(stack_t **stack, unsigned int lineNumber);
 
+/* stack_functions3 */
+void _mod(stack_t **stack, unsigned int lineNumber);
+
 /* err_handler */
 void fileErr(int errCode, ...);
 void stackErr(int errCode, ...);
