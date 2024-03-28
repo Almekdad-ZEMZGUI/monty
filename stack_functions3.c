@@ -43,3 +43,32 @@ void _pchar(stack_t **stack, unsigned int lineNumber)
 		strErr(10, lineNumber);
 	printf("%c\n", result);
 }
+
+/**
+ * _pstr - prints the string starting at the top of the stack
+ * @stack: double pointer to top of the stack
+ * @lineNumber: line number of of the opcode
+ *
+ * Return: nothing
+ */
+void _pstr(stack_t **stack, __unusd unsigned int lineNumber)
+{
+	int asc;
+	stack_t *temp = *stack;
+
+	if (!stack || !*stack)
+	{
+		printf("\n");
+		return;
+	}
+
+	while (temp)
+	{
+		asc = temp->n;
+		if (asc <= 0 || asc > 127)
+			break;
+		printf("%c", asc);
+		temp = temp->next;
+	}
+	printf("\n");
+}

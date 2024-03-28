@@ -27,6 +27,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 		{"mul", _mul},
 		{"mod", _mod},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 
