@@ -61,6 +61,7 @@ void _push(stack_t **newNode, __unusd unsigned int lineNumber);
 void _pall(stack_t **stack, unsigned int lineNumber);
 void _pint(stack_t **stack, unsigned int lineNumber);
 void _pop(stack_t **stack, unsigned int lineNumber);
+void _swap(stack_t **stack, unsigned int lineNumber);
 
 /* err_handler */
 void fileErr(int errCode, ...);

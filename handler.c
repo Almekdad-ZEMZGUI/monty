@@ -19,6 +19,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{NULL, NULL}
 	};
 
