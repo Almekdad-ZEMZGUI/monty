@@ -18,6 +18,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"pop", _pop},
 		{NULL, NULL}
 	};
 
@@ -127,7 +128,7 @@ void addToQueue(stack_t **newNode, __unusd unsigned int lineNumber)
 {
 	stack_t *temp = head;
 
-	if (!newNode || *newNode == NULL)
+	if (!newNode || !*newNode)
 		exit(EXIT_FAILURE);
 	if (head == NULL)
 	{

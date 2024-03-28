@@ -64,3 +64,25 @@ void _pint(stack_t **stack, unsigned int lineNumber)
 
 	printf("%d\n", (*stack)->n);
 }
+
+/**
+ * _pop - removes the top element of the stack
+ * @stack: double pointer to top of the stack
+ * @lineNumber: line number of of the opcode
+ *
+ * Return: nothing
+ */
+void _pop(stack_t **stack, unsigned int lineNumber)
+{
+	stack_t *temp;
+
+	if (!stack || !*stack)
+		stackErr(7, lineNumber);
+
+	temp = *stack;
+	*stack = temp->next;
+	if (*stack)
+		(*stack)->prev = NULL;
+
+	free(temp);
+}
