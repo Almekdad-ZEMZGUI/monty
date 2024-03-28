@@ -20,6 +20,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
+		{"add", _add},
 		{NULL, NULL}
 	};
 

@@ -63,6 +63,9 @@ void _pint(stack_t **stack, unsigned int lineNumber);
 void _pop(stack_t **stack, unsigned int lineNumber);
 void _swap(stack_t **stack, unsigned int lineNumber);
 
+/* stack_functions2 */
+void _add(stack_t **stack, unsigned int line_number);
+
 /* err_handler */
 void fileErr(int errCode, ...);
 void stackErr(int errCode, ...);
