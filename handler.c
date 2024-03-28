@@ -23,6 +23,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
+		{"div", _div},
 		{NULL, NULL}
 	};
 
