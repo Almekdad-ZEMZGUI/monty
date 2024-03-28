@@ -1,9 +1,13 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+#define _GNU_SOURCE
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdarg.h>
 #define __unusd __attribute__((unused))
 
 
@@ -37,6 +41,27 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef void (*op_f)(stack_t **, unsigned int);
 extern stack_t *head;
 
+/* main */
+void openFile(char *fileName);
+void readFile(FILE *fd);
+int parseLine(char *buffer, int lineNumber, int format);
+
+/* handler */
+void _handler(char *opc, char *val, int lineNumber, int format);
+void callFunction(op_f func, char *opc, char *val, int lineNumber, int format);
+stack_t *createNode(int n);
+void freeNodes(void);
+void addToQueue(stack_t **newNode, __unusd unsigned int lineNumber);
+
+/* stack_functions1 */
+void _push(stack_t **newNode, __unusd unsigned int lineNumber);
+void _pall(stack_t **stack, unsigned int lineNumber);
+
+/* err_handler */
+void fileErr(int errCode, ...);
+void stackErr(int errCode, ...);
+void strErr(int errCode, ...);
 #endif /* _MONTY_H_ */
