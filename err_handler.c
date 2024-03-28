@@ -20,27 +20,27 @@ void fileErr(int errCode, ...)
 	va_start(ag, errCode);
 	switch (errCode)
 	{
-		case 1:
-			fprintf(stderr, "USAGE: monty file\n");
-			break;
-		case 2:
-		        opc = va_arg(ag, char *);
-			fprintf(stderr, "Error: Can't open file %s\n", opc);
-			break;
-		case 3:
-			line = va_arg(ag, int);
-			opc = va_arg(ag, char *);
-			fprintf(stderr, "L%d: unknown instruction %s\n", line, opc);
-			break;
-		case 4:
-			fprintf(stderr, "Error: malloc failed\n");
-			break;
-		case 5:
-		        line = va_arg(ag, int);
-			fprintf(stderr, "L%d: usage: push integer\n", line);
-			break;
-		default:
-			break;
+	case 1:
+		fprintf(stderr, "USAGE: monty file\n");
+		break;
+	case 2:
+		opc = va_arg(ag, char *);
+		fprintf(stderr, "Error: Can't open file %s\n", opc);
+		break;
+	case 3:
+		line = va_arg(ag, int);
+		opc = va_arg(ag, char *);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line, opc);
+		break;
+	case 4:
+		fprintf(stderr, "Error: malloc failed\n");
+		break;
+	case 5:
+		line = va_arg(ag, int);
+		fprintf(stderr, "L%d: usage: push integer\n", line);
+		break;
+	default:
+		break;
 	}
 
 	freeNodes();
@@ -66,25 +66,25 @@ void stackErr(int errCode, ...)
 	va_start(ag, errCode);
 	switch (errCode)
 	{
-		case 6:
-		        line = va_arg(ag, int);
-			fprintf(stderr, "L%d: can't pint, stack empty\n", line);
-			break;
-		case 7:
-		        line = va_arg(ag, int);
-			fprintf(stderr, "L%d: can't pop an empty stack\n", line);
-			break;
-		case 8:
-			line = va_arg(ag, unsigned int);
-			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", line, op);
-			break;
-		case 9:
-		        line = va_arg(ag, unsigned int);
-			fprintf(stderr, "L%d: division by zero\n", line);
-			break;
-		default:
-			break;
+	case 6:
+		line = va_arg(ag, int);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
+		break;
+	case 7:
+		line = va_arg(ag, int);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+		break;
+	case 8:
+		line = va_arg(ag, unsigned int);
+		op = va_arg(ag, char *);
+		fprintf(stderr, "L%d: can't %s, stack too short\n", line, op);
+		break;
+	case 9:
+		line = va_arg(ag, unsigned int);
+		fprintf(stderr, "L%d: division by zero\n", line);
+		break;
+	default:
+		break;
 	}
 
 	freeNodes();
@@ -108,14 +108,14 @@ void strErr(int errCode, ...)
 	line = va_arg(ag, int);
 	switch (errCode)
 	{
-		case 10:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
-			break;
-		case 11:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
-			break;
-		default:
-			break;
+	case 10:
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+		break;
+	case 11:
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+		break;
+	default:
+		break;
 	}
 	freeNodes();
 	exit(EXIT_FAILURE);

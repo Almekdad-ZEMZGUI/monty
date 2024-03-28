@@ -5,7 +5,7 @@
  * @opcode: opcode
  * @val: value of opcode
  * @format: storage format
- * @ln: line number
+ * @lineNumber: line number
  *
  * Return: nothing
  */
@@ -17,6 +17,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 	instruction_t opt[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 
@@ -37,8 +38,8 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 
 /**
  * callFunction - Calls the required function
- * @f: Pointer to the required function
- * @opc: string of the opcode
+ * @func: Pointer to the required function
+ * @op: string of the opcode
  * @val: value of a numeric value
  * @lineNumber: line number for the instruction
  * @format: Format specifier
@@ -97,7 +98,7 @@ stack_t *createNode(int n)
 }
 
 /**
- * free_nodes - Frees nodes in the stack
+ * freeNodes - Frees nodes in the stack
  *
  * Return: nothing
  */
@@ -140,3 +141,4 @@ void addToQueue(stack_t **newNode, __unusd unsigned int lineNumber)
 	temp->next = *newNode;
 	(*newNode)->prev = temp;
 }
+

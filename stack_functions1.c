@@ -2,7 +2,7 @@
 
 /**
  * _push - pushes an element to the stack
- * @newNode: node to push 
+ * @newNode: node to push
  * @lineNumber: line number of  the opcode
  *
  * Return: nothing
@@ -37,7 +37,7 @@ void _push(stack_t **newNode, __unusd unsigned int lineNumber)
 void _pall(stack_t **stack, unsigned int lineNumber)
 {
 	stack_t *temp;
-        (void) lineNumber;
+	(void) lineNumber;
 
 	if (!stack)
 		exit(EXIT_FAILURE);
@@ -48,4 +48,19 @@ void _pall(stack_t **stack, unsigned int lineNumber)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
+}
+
+/**
+ * _pint - prints the value at the top of the stack
+ * @stack: double pointer to top of the stack
+ * @lineNumber: line number of of the opcode
+ *
+ * Return: nothing
+ */
+void _pint(stack_t **stack, unsigned int lineNumber)
+{
+	if (!stack || !*stack)
+		stackErr(6, lineNumber);
+
+	printf("%d\n", (*stack)->n);
 }
