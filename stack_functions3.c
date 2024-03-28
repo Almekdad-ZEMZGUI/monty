@@ -72,3 +72,27 @@ void _pstr(stack_t **stack, __unusd unsigned int lineNumber)
 	}
 	printf("\n");
 }
+
+/**
+ * _rotl - rotates the stack to the top
+ * @stack: double pointer to top of the stack
+ * @lineNumber: line number of of the opcode
+ *
+ * Return: nothing
+ */
+void _rotl(stack_t **stack, __unusd unsigned int lineNumber)
+{
+	stack_t *temp = *stack;
+
+	if (!stack || !*stack || !(*stack)->next)
+		return;
+
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = *stack;
+	(*stack)->prev = temp;
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
+}
