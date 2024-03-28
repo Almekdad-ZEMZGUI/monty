@@ -75,6 +75,7 @@ void _mod(stack_t **stack, unsigned int lineNumber);
 void _pchar(stack_t **stack, unsigned int lineNumber);
 void _pstr(stack_t **stack, __unusd unsigned int lineNumber);
 void _rotl(stack_t **stack, __unusd unsigned int lineNumber);
+void _rotr(stack_t **stack, __unusd unsigned int lineNumber);
 
 /* err_handler */
 void fileErr(int errCode, ...);

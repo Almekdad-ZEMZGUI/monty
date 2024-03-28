@@ -29,6 +29,7 @@ void _handler(char *opcode, char *val, int lineNumber, int format)
 		{"pchar", _pchar},
 		{"pstr", _pstr},
 		{"rotl", _rotl},
+		{"rotr", _rotr},
 		{NULL, NULL}
 	};
 
