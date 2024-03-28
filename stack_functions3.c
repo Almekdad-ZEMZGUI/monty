@@ -12,7 +12,7 @@ void _mod(stack_t **stack, unsigned int lineNumber)
 	int result;
 
 	if (!stack || !*stack || !(*stack)->next)
-                stackErr(8, lineNumber, "mod");
+		stackErr(8, lineNumber, "mod");
 
 	if ((*stack)->n == 0)
 		stackErr(9, lineNumber);

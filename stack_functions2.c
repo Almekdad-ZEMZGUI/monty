@@ -7,12 +7,12 @@
  *
  * Return: nothing
  */
-void _add(stack_t **stack, unsigned int line_number)
+void _add(stack_t **stack, unsigned int lineNumber)
 {
 	int result;
 
 	if (!stack || !*stack || !(*stack)->next)
-		stackErr(8, line_number, "add");
+		stackErr(8, lineNumber, "add");
 
 	(*stack) = (*stack)->next;
 	result = (*stack)->n + (*stack)->prev->n;
@@ -46,7 +46,7 @@ void _sub(stack_t **stack, unsigned int lineNumber)
 	int result;
 
 	if (!stack || !*stack || !(*stack)->next)
-                stackErr(8, lineNumber, "sub");
+		stackErr(8, lineNumber, "sub");
 
 	(*stack) = (*stack)->next;
 	result = (*stack)->n - (*stack)->prev->n;
